@@ -245,7 +245,7 @@
             // 添加数据
             addBrand() {
                 //console.log(this.brand);
-                var _this = this;
+                let _this = this;
 
                 // 发送ajax请求，添加数据
                 axios({
@@ -262,7 +262,7 @@
                                 id: "",
                                 ordered: "",
                                 description: ""
-                        },
+                        };
                         //关闭窗口
                         _this.dialogVisible = false;
 
@@ -295,48 +295,13 @@
 
             // 批量删除
             deleteByIds(){
-                //console.log(this.multipleSelection);
-                /*
-                [
-                    {
-                        "brandName": "华为",
-                        "companyName": "华为技术有限公司",
-                        "description": "万物互联",
-                        "id": 1,
-                        "ordered": 100,
-                        "status": 1,
-                        "statusStr": "启用"
-                    },
-                    {
-                        "brandName": "小米",
-                        "companyName": "小米科技有限公司",
-                        "description": "are you ok",
-                        "id": 2,
-                        "ordered": 50,
-                        "status": 1,
-                        "statusStr": "启用"
-                    },
-                    {
-                        "brandName": "格力",
-                        "companyName": "格力电器股份有限公司",
-                        "description": "让世界爱上中国造",
-                        "id": 3,
-                        "ordered": 30,
-                        "status": 1,
-                        "statusStr": "启用"
-                    }
-                ]
-                 */
-
                 // 弹出确认提示框
-
                 this.$confirm('此操作将删除该数据, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then(() => {
                     //用户点击确认按钮
-
                     //1. 创建id数组 [1,2,3], 从 this.multipleSelection 获取即可
                     for (let i = 0; i < this.multipleSelection.length; i++) {
                         let selectionElement = this.multipleSelection[i];
@@ -345,7 +310,7 @@
                     }
 
                     //2. 发送AJAX请求
-                    var _this = this;
+                    let _this = this;
 
                     // 发送ajax请求，添加数据
                     axios({
@@ -368,16 +333,11 @@
                     })
                 }).catch(() => {
                     //用户点击取消按钮
-
                     this.$message({
                         type: 'info',
                         message: '已取消删除'
                     });
                 });
-
-
-
-
             }
 
         },
