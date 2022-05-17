@@ -15,7 +15,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet("/brand/*")
 public class BrandServlet extends BaseServlet{
     private BrandService brandService = new BrandServiceImpl();
 
@@ -48,13 +47,8 @@ public class BrandServlet extends BaseServlet{
 
     /**
      * 批量删除
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
     public void deleteByIds(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         //1. 接收数据  [1,2,3]
         BufferedReader br = request.getReader();
         String params = br.readLine();//json字符串
@@ -68,12 +62,7 @@ public class BrandServlet extends BaseServlet{
 
     /**
      * 分页查询
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
-
     public void selectByPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. 接收 当前页码 和 每页展示条数    url?currentPage=1&pageSize=5
         String _currentPage = request.getParameter("currentPage");
@@ -97,12 +86,7 @@ public class BrandServlet extends BaseServlet{
 
     /**
      * 分页条件查询
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
-
     public void selectByPageAndCondition(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. 接收 当前页码 和 每页展示条数    url?currentPage=1&pageSize=5
         String _currentPage = request.getParameter("currentPage");
