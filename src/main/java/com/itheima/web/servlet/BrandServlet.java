@@ -22,7 +22,6 @@ public class BrandServlet extends BaseServlet{
     public void selectAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. 调用service查询
         List<Brand> brands = brandService.selectAll();
-
         //2. 转为JSON
         String jsonString = JSON.toJSONString(brands);
         //3. 写数据
