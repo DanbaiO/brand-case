@@ -28,6 +28,8 @@ public class UserServlet extends BaseServlet{
         String password = u.getPassword();
         String remember = request.getParameter("checkbox");
 
+        /*System.out.println(u);
+        System.out.println(remember);*/
         //2. 调用service查询
         User user = service.login(username, password);
 
@@ -52,8 +54,8 @@ public class UserServlet extends BaseServlet{
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
 
-            String contextPath = request.getContextPath();
-            response.sendRedirect(contextPath+"/brand.html");
+            response.setContentType("text/json;charset=utf-8");
+            response.getWriter().write("success");
         }else {
             // 登录失败
             response.setContentType("text/json;charset=utf-8");
