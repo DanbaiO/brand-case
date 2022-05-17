@@ -18,7 +18,7 @@ import java.io.IOException;
 public class UserServlet extends BaseServlet{
     private final UserService service = new UserServiceImpl();
 
-    void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         //1. 获取用户名和密码,获取复选框数据
         BufferedReader reader = request.getReader();
         String params = reader.readLine();//json字符串
@@ -61,7 +61,7 @@ public class UserServlet extends BaseServlet{
         }
     }
 
-    void checkCode(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void checkCode(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 生成验证码
         ServletOutputStream os = response.getOutputStream();
         String checkCode = CheckCodeUtil.outputVerifyImage(100, 40, os, 4);
@@ -70,7 +70,7 @@ public class UserServlet extends BaseServlet{
         session.setAttribute("checkCodeGen",checkCode);
     }
 
-    void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. 获取用户名和密码数据
         String username = request.getParameter("username");
         String password = request.getParameter("password");

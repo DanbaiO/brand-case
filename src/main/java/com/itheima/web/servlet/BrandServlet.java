@@ -8,7 +8,6 @@ import com.itheima.service.BrandService;
 import com.itheima.service.impl.BrandServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class BrandServlet extends BaseServlet{
-    private BrandService brandService = new BrandServiceImpl();
+    private final BrandService brandService = new BrandServiceImpl();
 
     public void selectAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. 调用service查询
