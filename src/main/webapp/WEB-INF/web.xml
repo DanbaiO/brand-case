@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>UserServlet</servlet-name>
-        <servlet-class>com.itheima.web.servlet.BrandServlet</servlet-class>
+        <servlet-class>com.itheima.web.servlet.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>

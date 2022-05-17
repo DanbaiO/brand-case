@@ -25,8 +25,6 @@ public class UserServiceImpl implements UserService {
         return  user;
     }
 
-
-
     /**
      * 注册方法
      */

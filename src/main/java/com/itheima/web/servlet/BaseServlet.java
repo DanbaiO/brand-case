@@ -30,9 +30,13 @@ public class BaseServlet extends HttpServlet {
         //System.out.println(this);
 
         Class<? extends BaseServlet> cls = this.getClass();
+
         //2.2 获取方法 Method对象
         try {
+            System.out.println(this);
+            System.out.println(methodName);
             Method method = cls.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
+
             //2.3 执行方法
             method.invoke(this,req,resp);
         } catch (NoSuchMethodException e) {
